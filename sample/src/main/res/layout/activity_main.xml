@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <space.jay.colorfultextview.ColorfulTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="32sp"
+        android:textStyle="bold"/>
+
+    <space.jay.colorfultextview.ColorfulTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHANGE COLOR YOU WANT"
+        android:textSize="24sp"
+        app:colors="@array/colors_loading"
+        android:layout_marginTop="24dp"/>
+
+
+    <space.jay.colorfultextview.ColorfulTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHANGE DURATION YOU WANT"
+        android:textSize="24sp"
+        app:colors="@array/colors_loading"
+        app:duration="100"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>
