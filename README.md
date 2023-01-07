@@ -1,7 +1,7 @@
 # ColorfulTextView
 ### This is an easy-to-use and fancy textview.
 ## Sample
-![ColorfultTextViewSample](https://user-images.githubusercontent.com/32419237/211138803-2b315c09-a655-4ef2-9aba-b5181e35b3e0.gif)
+<img src="https://github.com/Jayze24/ColorfulTextView/blob/main/sample/src/main/res/raw/colorfult_textview_sample.gif" width="268" height="225">
 
 ## Dependency
 Add it in your project `build.gradle` 
