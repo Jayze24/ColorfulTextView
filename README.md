@@ -1,6 +1,9 @@
 # ColorfulTextView
+[![License](https://img.shields.io/badge/License-Apache_2.0-orange.svg)](https://opensource.org/licenses/Apache-2.0)
+[![API](https://img.shields.io/badge/API-23%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=23)
+[![](https://jitpack.io/v/Jayze24/ColorfulTextView.svg)](https://jitpack.io/#Jayze24/ColorfulTextView)
+
 ### This is an easy-to-use and fancy textview.
-## Sample
 <img src="https://github.com/Jayze24/ColorfulTextView/blob/main/sample/src/main/res/raw/colorfult_textview_sample.gif" width="268" height="225">
 
 ## Dependency
@@ -54,3 +57,4 @@ YourColorfulTextView.animationResume()
 YourColorfulTextView.animationPause()
 YourColorfulTextView.animationRemove()
 ```
+
