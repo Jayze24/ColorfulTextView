@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ColorfulTextView">
-        <attr name="colors" format="reference"/>
-        <attr name="duration" format="integer"/>
+        <attr name="colorful_colors" format="reference"/>
+        <attr name="colorful_duration" format="integer"/>
+        <attr name="colorful_direction">
+            <enum name="right" value="0"/>
+            <enum name="left" value="1"/>
+            <enum name="up" value="2"/>
+            <enum name="down" value="3"/>
+        </attr>
     </declare-styleable>
 </resources>

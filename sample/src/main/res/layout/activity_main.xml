@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:text="CHANGE COLOR YOU WANT"
         android:textSize="24sp"
-        app:colors="@array/colors_loading"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        app:colorful_colors="@array/colors_loading"/>
 
 
     <space.jay.colorfultextview.ColorfulTextView
@@ -30,8 +30,16 @@
         android:layout_height="wrap_content"
         android:text="CHANGE DURATION YOU WANT"
         android:textSize="24sp"
-        app:colors="@array/colors_loading"
-        app:duration="100"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        app:colorful_duration="100" />
+
+    <space.jay.colorfultextview.ColorfulTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="CHANGE DIRECTION YOU WANT"
+        android:textSize="24sp"
+        android:layout_marginTop="24dp"
+        app:colorful_direction="down" />
 
 </LinearLayout>

@@ -13,5 +13,8 @@
         <item>@color/teal_700</item>
         <item>@color/purple_200</item>
         <item>@color/purple_700</item>
+        <item>#6B76FF</item>
+        <item>#C8E4FE</item>
+        <item>#FEFFE0</item>
     </array>
 </resources>

@@ -33,13 +33,11 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Color
 import android.graphics.LinearGradient
+import android.graphics.PointF
 import android.graphics.Shader
-import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.view.View
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.getResourceIdOrThrow
 import androidx.core.graphics.ColorUtils
 
 class ColorfulTextView @JvmOverloads constructor(
@@ -50,15 +48,18 @@ class ColorfulTextView @JvmOverloads constructor(
     private var animator: ValueAnimator? = null
     private var arrayColor: IntArray = intArrayOf()
     private var windowSize: Int = 0 // arrayColor에서 컬러를 가져올 사이즈
-    private var noColorResourceId = -1
+    private var direction: TypeDirection = TypeDirection.RIGHT
+    private val noColorResourceId = -1
+    private val measuredTextSize = TextSize()
 
     init {
         val set = context.obtainStyledAttributes(attrs, R.styleable.ColorfulTextView)
-        val colorsResourceId = set.getResourceId(R.styleable.ColorfulTextView_colors, noColorResourceId)
+        val colorsResourceId = set.getResourceId(R.styleable.ColorfulTextView_colorful_colors, noColorResourceId)
         val colors = getGradientColorFromResource(colorsResourceId)
-        val duration = set.getInt(R.styleable.ColorfulTextView_duration, 500)
+        val duration = set.getInt(R.styleable.ColorfulTextView_colorful_duration, 500)
+        val direction = TypeDirection.getType(set.getInt(R.styleable.ColorfulTextView_colorful_direction, TypeDirection.RIGHT.value))
         set.recycle()
-        setAnimator(duration, *colors)
+        setAnimator(direction = direction, duration = duration, colors = colors)
     }
 
     override fun onVisibilityChanged(changedView: View, visibility: Int) {
@@ -70,13 +71,19 @@ class ColorfulTextView @JvmOverloads constructor(
         }
     }
 
-    fun setAnimator(@androidx.annotation.IntRange(from = 100, to = 1000) duration: Int, vararg colors: Int) {
+    fun setAnimator(
+        direction: TypeDirection = TypeDirection.RIGHT,
+        @androidx.annotation.IntRange(from = 100, to = 1000) duration: Int,
+        vararg colors: Int
+    ) {
         if (colors.size < 2) {
             throw IllegalArgumentException("colors must be more than two")
         }
         animationRemove()
+        measureText()
         windowSize = colors.size
         arrayColor = colors + colors
+        this.direction = direction
         animator = ValueAnimator.ofFloat(0f, 1f).apply {
             repeatCount = ValueAnimator.INFINITE
             repeatMode = ValueAnimator.RESTART
@@ -132,15 +139,30 @@ class ColorfulTextView @JvmOverloads constructor(
     }
 
     private fun getShader(colors: IntArray): Shader {
-        return LinearGradient(
-            0f,
-            0f,
-            this.paint.measureText(this.text.toString()),
-            this.textSize,
-            colors,
-            null,
-            Shader.TileMode.MIRROR
-        )
+        val pointStart : PointF
+        val pointEnd : PointF
+        when(direction) {
+            TypeDirection.RIGHT -> {
+                pointStart = PointF(measuredTextSize.width, 0f)
+                pointEnd = PointF(0f, 0f)
+            }
+            TypeDirection.LEFT -> {
+                pointStart = PointF(0f, 0f)
+                pointEnd = PointF(measuredTextSize.width, 0f)
+            }
+            TypeDirection.UP -> {
+                pointStart = PointF(0f, 0f)
+                pointEnd = PointF(0f, measuredTextSize.height)
+            }
+            TypeDirection.DOWN -> {
+                pointStart = PointF(0f, measuredTextSize.height)
+                pointEnd = PointF(0f, 0f)
+            }
+        }
+        return LinearGradient(pointStart.x, pointStart.y, pointEnd.x, pointEnd.y, colors, null, Shader.TileMode.MIRROR)
     }
 
+    private fun measureText() {
+        measuredTextSize.measureText(this)
+    }
 }
