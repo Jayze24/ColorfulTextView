@@ -3,28 +3,23 @@
  * @author Jay
  *
  * @explanation
- * AppCompatTextView 를 상속 받아서 만든 그래디언트 애니메이션 뷰이다.
- * xml 에서 사용할때 아래 속성을 필수로 넣어줘야 한다.
- * <declare-styleable name="TextGradientAnimationView">
- *      <attr name="colors" format="reference"/>
- *      <attr name="duration" format="integer"/>
- * </declare-styleable>
+ * AppCompatTextView를 상속 받아서 만든 그래디언트 애니메이션 텍스트뷰이다.
  *
  * @sample
- * <space.jay.book.view.text.gradient.TextGradientAnimationView
+ * <space.jay.colorfultextview.ColorfulTextView
  *      android:id="@+id/textViewSearchBookLoading"
  *      android:layout_width="wrap_content"
  *      android:layout_height="wrap_content"
- *      android:text="@string/loading"
+ *      android:text="Colorful Text View"
  *      android:textSize="32sp"
  *      android:textStyle="bold|italic"
- *      app:colors="@array/colors_loading"
- *      app:duration="500" />
+ *      app:colorful_colors="@array/colors_loading"
+ *      app:colorful_duration="500"
+ *      app:colorful_direction="right" />
  *
  * @comment
  * 1. onDestroy() 에서 animationRemove() 를 호출 하자
- * 2. 색상을 변경해주고 싶을 때는 아래와 같이 호출 하면 된다.
- *    setAnimator(1000, Color.BLUE, Color.GRAY, Color.GREEN, Color.CYAN)
+ * 2. 색상을 변경해주고 싶을 때는 setAnimator를 호출 하자
  * 3. 지속적으로 보이는 애니메이션이라면 onResume() 과 onPause()에서 animationResume() 과 animationPause()
  */
 package space.jay.colorfultextview
