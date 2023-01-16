@@ -33,7 +33,7 @@ Put in your xml layout. Just add a gradient color to `app:colors` and put a dura
     android:textStyle="bold"
     app:colorful_colors="@array/colors_loading"
     app:colorful_duration="100"
-	app:colorful_direction="right" />
+    app:colorful_direction="down"/>
 ```
 Add your color in res/values/colors.xml. for example :
 ```xml
