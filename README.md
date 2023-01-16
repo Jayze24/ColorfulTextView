@@ -32,7 +32,7 @@ Put in your xml layout. Just add a gradient color to `app:colorful_colors` and p
     android:text="Colorful Text Sample"
     android:textSize="24sp"
     android:textStyle="bold"
-    app:colorful_colors="@array/colors_loading"
+    app:colorful_colors="@array/colors_sample"
     app:colorful_duration="100"
     app:colorful_direction="down"/>
 ```
@@ -41,7 +41,7 @@ Add your color in res/values/colors.xml. for example :
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	...
-    <array name="colors_loading">
+    <array name="colors_sample">
         <item>#FFBB86FC</item>
         <item>#FF6200EE</item>
         <item>#FF3700B3</item>
