@@ -16,10 +16,11 @@ allprojects {
     }
 }
 ```
-Add it in your module `build.gradle` 
+Add it in your module `build.gradle`    
+[![](https://jitpack.io/v/Jayze24/ColorfulTextView.svg)](https://jitpack.io/#Jayze24/ColorfulTextView)
 ```gradle
 dependencies {
-    implementation 'com.github.Jayze24:ColorfulTextView:0.0.1'
+    implementation 'com.github.Jayze24:ColorfulTextView:x.y.z'
 }
 ```
 ## Usage
