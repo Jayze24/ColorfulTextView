@@ -6,7 +6,7 @@ import android.graphics.Shader
 import androidx.core.graphics.ColorUtils
 import kotlin.math.ceil
 
-internal class GradientMaker(
+internal class GradientLinear(
     val measuredTextSize: TextSizeMeasured,
     val direction: TypeDirection,
     val arrayColor: IntArray,
