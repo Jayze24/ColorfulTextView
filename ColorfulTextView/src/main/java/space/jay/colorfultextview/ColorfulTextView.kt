@@ -34,7 +34,7 @@ class ColorfulTextView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
 ) : AppCompatTextView(context, attrs) {
 
-    companion object {
+    internal companion object {
         private const val NO_RESOURCE_ID_COLOR = -1
         private const val DURATION_DEFAULT = 500
     }
