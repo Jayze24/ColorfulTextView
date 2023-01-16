@@ -31,8 +31,9 @@ Put in your xml layout. Just add a gradient color to `app:colors` and put a dura
     android:text="Colorful Text Sample"
     android:textSize="24sp"
     android:textStyle="bold"
-    app:colors="@array/colors_loading"
-    app:duration="100"/>
+    app:colorful_colors="@array/colors_loading"
+    app:colorful_duration="100"
+	app:colorful_direction="right" />
 ```
 Add your color in res/values/colors.xml. for example :
 ```xml
@@ -50,7 +51,7 @@ Add your color in res/values/colors.xml. for example :
 ```
 Can be controlled programmatically. like this : 
 ```kotlin
-YourColorfulTextView.setAnimator(1000, Color.BLUE, Color.GRAY, Color.GREEN, Color.CYAN)
+YourColorfulTextView.setAnimation(1000, Color.BLUE, Color.GRAY, Color.GREEN, Color.CYAN)
 
 YourColorfulTextView.animationStart()
 YourColorfulTextView.animationResume()
