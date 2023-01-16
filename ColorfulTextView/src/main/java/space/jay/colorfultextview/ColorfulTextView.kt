@@ -19,7 +19,7 @@
  *
  * @comment
  * 1. onDestroy() 에서 animationRemove() 를 호출 하자
- * 2. 색상을 변경해주고 싶을 때는 setAnimator를 호출 하자
+ * 2. 색상을 변경해주고 싶을 때는 setAnimation를 호출 하자
  */
 package space.jay.colorfultextview
 
