@@ -23,7 +23,7 @@ dependencies {
 }
 ```
 ## Usage
-Put in your xml layout. Just add a gradient color to `app:colors` and put a duration (100 to 1000) into `app:duration`(The lower the number, the faster it moves.)
+Put in your xml layout. Just add a gradient color to `app:colorful_colors` and put a duration (100 to 1000) into `app:colorful_duration`(The lower the number, the faster it moves.) You can also select the direction `app:colorful_direction` (right, left, up, down).
 ```xml
 <space.jay.colorfultextview.ColorfulTextView
     android:layout_width="wrap_content"
@@ -51,7 +51,7 @@ Add your color in res/values/colors.xml. for example :
 ```
 Can be controlled programmatically. like this : 
 ```kotlin
-YourColorfulTextView.setAnimation(1000, Color.BLUE, Color.GRAY, Color.GREEN, Color.CYAN)
+YourColorfulTextView.setAnimation(TypeDirection.RIGHT, 1000, Color.BLUE, Color.GRAY, Color.GREEN, Color.CYAN)
 
 YourColorfulTextView.animationStart()
 YourColorfulTextView.animationResume()
